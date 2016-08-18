@@ -4,6 +4,6 @@
 
 Runs with processing 3.0
 
-Copyright 2008, 2016 Walter Gordy
+Copyright 2012, 2016 Walter Gordy
 
 ![processing sketch preview](https://github.com/s4lt3d/IK_Sketch/blob/master/preview.png?raw=true)
