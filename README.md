@@ -1,21 +1,80 @@
-# Inverse Kinematics Demo
+# Inverse Kinematics Sketch
 
-## Description:
-This code demonstrates a basic inverse kinematics solution for a 6 degrees of freedom (DOF) robotic arm in Processing. Using Denavit-Hartenberg (DH) parameters and matrix operations, it calculates the angles of the arm's joints based on a desired end-effector position. The arm's structure and its parameters, like link lengths and tool lengths, are predefined. The demonstration allows users to interact with the 3D visualization by manipulating the target end-effector position with the mouse.
+> An interactive 6-DOF robotic arm inverse kinematics solver in Processing using Denavit-Hartenberg parameters.
 
-### Mathematical Basis:
-The solution uses the Denavit-Hartenberg (DH) convention to represent the joint parameters and transformations. 
+---
 
-### How to Run:
-1. Ensure you have the [Processing environment](https://processing.org/) installed.
-2. Copy the provided code into the Processing IDE.
-3. Run the program. A 3D visualization of the robot arm will appear.
-4. Use the mouse to interact:
-   - Click and drag to change the orientation of the target end-effector.
-   - Move the mouse without pressing to change the target position.
-   
+## Screenshots / Examples
+
 ![processing sketch preview](https://github.com/s4lt3d/IK_Sketch/blob/master/robotic_arm.gif?raw=true)
 
-Here's a link to a video which used this sketch to control a robot. 
+**Real-world application:**
 
 [![Robotic Arm and Processing](https://img.youtube.com/vi/T0fo-2nNwrg/0.jpg)](https://www.youtube.com/watch?v=T0fo-2nNwrg)
+
+---
+
+## Overview
+
+This Processing sketch demonstrates inverse kinematics for a 6-degree-of-freedom (DOF) robotic arm. Using Denavit-Hartenberg (DH) parameters and matrix operations, it calculates joint angles needed to position the end-effector at a desired location.
+
+---
+
+## Features
+
+- **6-DOF robotic arm** — Full articulated arm with configurable link lengths
+- **DH parameters** — Industry-standard representation of arm geometry
+- **Interactive control** — Mouse-based end-effector positioning
+- **Real-time visualization** — 3D rendering of arm configuration
+
+---
+
+## Usage
+
+1. Install [Processing](https://processing.org/)
+2. Copy the code into the Processing IDE
+3. Run the program
+4. Interact with the mouse:
+   - **Move mouse** — Change target position
+   - **Click and drag** — Change target end-effector orientation
+
+---
+
+## Mathematics
+
+The solution uses the Denavit-Hartenberg convention to represent joint parameters and forward/inverse transformations.
+
+### Denavit-Hartenberg Parameters
+
+The DH convention defines each joint by four parameters:
+- **θ (theta)** — Rotation angle around Z-axis
+- **d** — Distance along Z-axis
+- **a** — Distance along X-axis (link length)
+- **α (alpha)** — Rotation angle around X-axis
+
+These parameters create transformation matrices that chain together to compute end-effector position from joint angles.
+
+### Inverse Kinematics Approach
+
+The sketch calculates joint angles needed to reach a target position by:
+1. Using the target end-effector position and orientation
+2. Working backwards through the kinematic chain
+3. Solving for individual joint angles
+
+---
+
+## Configuration
+
+Link lengths and DH parameters are configurable within the sketch. Modify the arm geometry by adjusting:
+- Segment lengths (link1, link2, link3, etc.)
+- Joint angle constraints
+- DH parameter values
+
+---
+
+## Technical Details
+
+- **Language:** Processing (Java-based)
+- **3D Libraries:** Processing's built-in 3D rendering
+- **Input:** Mouse-driven target positioning
+- **Output:** Real-time 3D visualization of arm configuration
